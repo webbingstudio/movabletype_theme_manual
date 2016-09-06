@@ -1,0 +1,35 @@
+<mt:Unless regex_replace="/\s*\n+/g","\n"><mt:Ignore>
+# =======================
+#
+# インデックス::マニュアル一覧
+#
+# =======================
+</mt:Ignore>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>マニュアル</title>
+<link href="./bootstrap.css" rel="stylesheet">
+</head>
+<body role="document" class="home">
+<div class="container">
+
+<div class="page-header">
+  <h1>マニュアル</h1>
+</div>
+
+<div class="list-group">
+<mt:Blogs blog_ids="children">
+  <a href="<mt:BlogURL />" class="list-group-item">
+    <mt:BlogName encode_html="1"/>
+  </a>
+</mt:Blogs>
+</div>
+
+</div>
+</body>
+</html>
+</mt:Unless>

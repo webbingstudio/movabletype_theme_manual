@@ -1,0 +1,67 @@
+---
+author_link: http://webbingstudio.com/
+author_name: WebbingStudio
+class: blog
+description: マニュアルを作成するためのテーマです。ウェブサイト用テーマのヘッダ・CSSを参照します。「モジュール::コンフィグ」テンプレートで表紙や色などを設定する必要があります。
+elements:
+  custom_fields:
+    component: commercial
+    data:
+      maindexing:
+        default: 0
+        description: チェックを入れると、目次にセクションとして表示します。
+        name: 目次に出す
+        obj_type: entry
+        options: ~
+        required: 0
+        tag: MaIndexing
+        type: checkbox
+    importer: custom_fields
+  template_set:
+    component: ~
+    data:
+      base_path: templates
+      label: exported_template set
+      templates:
+        archive:
+          category:
+            label: アーカイブ::章別ページ
+            mappings:
+              category:
+                archive_type: Category
+                file_template: <mt:CategoryBasename />.html
+                preferred: 1
+        index:
+          main_index:
+            label: インデックス::表紙
+            outfile: index.html
+            rebuild_me: 1
+          bootstrap_theme:
+            label: bootstrap-theme.css
+            outfile: bootstrap-theme.css
+            rebuild_me: 1
+          editor:
+            label: editor.css
+            outfile: editor.css
+            rebuild_me: 1
+        module:
+          config:
+            label: モジュール::コンフィグ
+        system:
+          comment_listing:
+            label: コメント一覧
+          comment_preview:
+            label: コメントプレビュー
+          comment_response:
+            label: コメント完了
+          dynamic_error:
+            label: ダイナミックパブリッシングエラー
+          popup_image:
+            label: ポップアップ画像
+          search_results:
+            label: 検索結果
+    importer: template_set
+id: manual_blog
+label: manual_blog
+name: manual_blog
+version: '1.0'

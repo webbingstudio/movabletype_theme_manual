@@ -1,0 +1,63 @@
+<mt:Unless regex_replace="/\s*\n+/g","\n"><mt:Ignore>
+# =======================
+#
+# インデックス::表紙
+#
+# =======================
+</mt:Ignore>
+<mt:SetVarBlock name="meta_title"><mt:BlogName encode_html="1" /> ウェブサイト更新手順書</mt:SetVarBlock>
+
+<mt:Include module="モジュール::コンフィグ" />
+<mt:Include module="モジュール::ヘッダ" parent="1" />
+
+<div class="container">
+<div class="page-break">
+
+<div class="jumbotron">
+<h1><mt:BlogName encode_html="1" /><br>
+ウェブサイト更新手順書</h1>
+</div>
+
+<div class="mainvisual">
+<img src="./upload/mainvisual.jpg" alt="">
+</div>
+
+<mt:Var name="ma_lead"/>
+
+<!-- /.page-break --></div>
+<!-- /.container --></div>
+
+
+<div class="container">
+<div class="page-break">
+<h1 class="h1">目次</h1>
+
+<mt:SetVar name="page_count" value="2" />
+
+<mt:TopLevelCategories>
+<mt:SetVarBlock name="page_count"><mt:Var name="page_count" op="++" /></mt:SetVarBlock>
+
+<div class="archives">
+<h2><mt:CategoryLabel encode_html="1" /><span class="pull-right"><mt:Var name="page_count" /></span></h2>
+
+<mt:Entries limit="9999" sort_by="authored_on" sort_order="ascend">
+
+<mt:If name="__first__" ne="1">
+<mt:SetVarBlock name="page_count"><mt:Var name="page_count" op="++" /></mt:SetVarBlock>
+</mt:If>
+
+<mt:MaIndexing setvar="page_indexing" />
+<mt:If name="page_indexing" eq="1">
+<h3><mt:EntryTitle encode_html="1" /><span class="pull-right"><mt:Var name="page_count" /></span></h3>
+</mt:If>
+
+</mt:Entries>
+
+<!-- /.archives --></div>
+</mt:TopLevelCategories>
+
+<!-- /.page-break --></div>
+<!-- /.container --></div>
+
+<mt:Include module="モジュール::フッタ" parent="1" />
+</mt:Unless>

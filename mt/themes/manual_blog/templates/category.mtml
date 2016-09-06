@@ -1,0 +1,59 @@
+<mt:Unless regex_replace="/\s*\n+/g","\n"><mt:Ignore>
+# =======================
+#
+# アーカイブ::章別ページ
+#
+# =======================
+</mt:Ignore>
+<mt:CategoryLabel encode_html="1" setVar="meta_title" />
+
+<mt:Include module="モジュール::コンフィグ" />
+<mt:Include module="モジュール::ヘッダ" parent="1" />
+
+<mt:SetVar name="count_stop" value="false" />
+<mt:SetVar name="page_count" value="2" />
+<mt:CategoryID setvar="page_category_id" />
+
+<mt:SubCategories top="1">
+<mt:CategoryID setvar="current_category_id" />
+<mt:If name="current_category_id" eq="$page_category_id"><mt:SetVar name="count_stop" value="true" /></mt:If>
+
+<mt:If name="count_stop" ne="true">
+<mt:Entries limit="9999" sort_by="authored_on" sort_order="ascend">
+<mt:SetVarBlock name="page_count"><mt:Var name="page_count" op="++" /></mt:SetVarBlock>
+</mt:Entries>
+</mt:If>
+</mt:SubCategories>
+
+<mt:Entries limit="9999" sort_by="authored_on" sort_order="ascend">
+<mt:EntriesHeader>
+<div class="container">
+</mt:EntriesHeader>
+
+<div id="<mt:EntryID pad="1" />"></div>
+<div class="page-break">
+
+<mt:If name="__first__">
+<div class="page-header">
+<h1><mt:CategoryLabel encode_html="1" /></h1>
+</div>
+</mt:If>
+
+<mt:MaIndexing setvar="page_indexing" />
+<mt:If name="page_indexing" eq="1">
+<h2><mt:EntryTitle encode_html="1" /></h2>
+</mt:If>
+
+<mt:EntryBody />
+
+<mt:SetVarBlock name="page_count"><mt:Var name="page_count" op="++" /></mt:SetVarBlock>
+<div class="page-num">- <mt:Var name="page_count" /> -</div>
+<!-- /.page-break --></div>
+
+<mt:EntriesFooter>
+<!-- /.container --></div>
+</mt:EntriesFooter>
+</mt:Entries>
+
+<mt:Include module="モジュール::フッタ" parent="1" />
+</mt:Unless>

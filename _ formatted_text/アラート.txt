@@ -1,0 +1,6 @@
+<div class="m-b alert alert-success">
+<p>注意書きsuccess</p>
+</div>
+<div class="m-b alert alert-danger">
+<p>注意書きdanger</p>
+</div>

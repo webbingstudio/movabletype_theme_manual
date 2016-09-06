@@ -1,0 +1,44 @@
+---
+author_link: http://webbingstudio.com/
+author_name: WebbingStudio
+class: website
+description: マニュアルを作成するためのテーマです。実際のマニュアルは、各子ブログで作成・出力します。
+elements:
+  template_set:
+    component: ~
+    data:
+      base_path: templates
+      label: exported_template set
+      templates:
+        index:
+          main_index:
+            label: インデックス::マニュアル一覧
+            outfile: index.html
+            rebuild_me: 1
+          bootstrap:
+            label: bootstrap.css
+            outfile: bootstrap.css
+            rebuild_me: 1
+        module:
+          header:
+            label: モジュール::ヘッダ
+          footer:
+            label: モジュール::フッタ
+        system:
+          comment_listing:
+            label: コメント一覧
+          comment_preview:
+            label: コメントプレビュー
+          comment_response:
+            label: コメント完了
+          dynamic_error:
+            label: ダイナミックパブリッシングエラー
+          popup_image:
+            label: ポップアップ画像
+          search_results:
+            label: 検索結果
+    importer: template_set
+id: manual_website
+label: manual_website
+name: manual_website
+version: '1.0'
