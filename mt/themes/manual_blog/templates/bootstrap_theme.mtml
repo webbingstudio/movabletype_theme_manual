@@ -76,7 +76,6 @@ img {
         overflow: visible;
         border-color: transparent;
     }
-
 }
 
 .next-page {
@@ -245,6 +244,57 @@ h6,.h6 {
 
 h6:before,.h6:before {
     display: none;
+}
+
+.global-nav {
+    position: fixed;
+    width: 200px;
+    top: 1rem;
+    left: 1rem;
+    background-color: rgba(0,0,0,.7);
+    color: #FFF;
+}
+
+@media print {
+    .global-nav {
+        display: none;
+    }
+}
+
+.global-nav h2 {
+    margin: 0;
+    padding: 10px;
+    font-size: 16px;
+    color: #FFF;
+    border: 0 none;
+    background: transparent none;
+    font-family: <mt:Var name="ma_font_base">;
+    line-height: 1.1;
+}
+
+.global-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.global-nav ul li {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    line-height: 1.1;
+}
+
+.global-nav ul li a {
+    display: block;
+    margin: 0;
+    padding: 10px;
+    color: #FFF;
+    border-top: 1px solid #000;
+}
+
+.global-nav ul li a:hover {
+    background-color: #000;
 }
 
 

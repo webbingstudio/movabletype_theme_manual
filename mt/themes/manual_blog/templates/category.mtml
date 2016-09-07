@@ -10,6 +10,19 @@
 <mt:Include module="モジュール::コンフィグ" />
 <mt:Include module="モジュール::ヘッダ" parent="1" />
 
+
+<mt:If name="ma_web" eq="1">
+<div class="global-nav">
+<h2>目次</h2>
+<ul>
+<mt:SubCategories top="1">
+<li><a href="<mt:CategoryArchiveLink />"><mt:CategoryLabel encode_html="1" /></a></li>
+</mt:SubCategories>
+</ul>
+</div>
+</mt:If>
+
+
 <mt:SetVar name="count_stop" value="false" />
 <mt:SetVar name="page_count" value="2" />
 <mt:CategoryID setvar="page_category_id" />
