@@ -1,7 +1,7 @@
 Movable Type theme "manual"
 ====================================
 
-- - - - - - - - - - - - - - - - - - -
+version 1.0.0
 
 Author: Seiko Kuchida  
 http://webbingstudio.com/
@@ -15,6 +15,9 @@ Copyright 2016 WebbingStudio
 「manual」は、Movable Type専用の、マニュアル作成のためのテーマです。HTMLでA4印刷に最適化されたマニュアルを作成し、PDFもしくは紙で出力することができます。
 
 CSS等は、基本的にMacOS＋Safari＋Acrobat前提となっています。
+
+デモサイト  
+http://cms-skill.com/manual_demo/
 
 
 ## テーマ構成

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>使い方 | Movable Type theme &quot;manual&quot;</title>
+<link href="./bootstrap.css" rel="stylesheet">
+<link href="./bootstrap-theme.css" rel="stylesheet">
+</head>
+<body role="document">
+<div class="global-nav">
+<h2>Web用目次</h2>
+<ul>
+<li><a href="http://mt01.cms-skill.net/manual/test/">表紙・目次</a></li>
+<li><a href="http://mt01.cms-skill.net/manual/test/chapter01.html">はじめに</a></li>
+<li><a href="http://mt01.cms-skill.net/manual/test/chapter02.html">使い方</a></li>
+<li><a href="http://mt01.cms-skill.net/manual/test/chapter03.html">定型文サンプル一覧</a></li>
+</ul>
+</div>
+<div class="container">
+<div id="000077"></div>
+<div class="page-break">
+<div class="page-header">
+<h1>使い方</h1>
+</div>
+<h2>テーマのインストールとブログの作成</h2>
+<h3>テーマをアップロードする</h3>
+<p>リポジトリ内の <em>/mt/themes/</em> にある、以下の二種類のテーマを、ディレクトリごと、利用中のMovable Typeの同じ階層にアップロードしてください。</p>
+<ul>
+<li>manual_website</li>
+<li>manual_blog<br /><br /></li>
+</ul>
+<h3>ウェブサイトを作成する</h3>
+<div class="row m-b-lg">
+<div class="col-xs-6"><img src="./upload/install_01.jpg" width="690" height="555" class="thumbnail" /></div>
+<div class="col-xs-6">
+<p>はじめて利用する場合は、マニュアル管理専用のウェブサイトを新規作成してください。<br />basic認証などでアクセスを制限することをお勧めします。</p>
+<p>作成はMovable Typeの通常の方法と変わりませんが、「ウェブサイトテーマ」に「manual_website」を選択します。</p>
+</div>
+</div>
+<h3>ブログを作成する</h3>
+<p>マニュアル用のウェブサイトに、子ブログを作成します。</p>
+<p><strong>マニュアル一冊につき、ブログひとつ</strong>となります。<br />ブログ名は案件名（ウェブサイト名）、「ブログテーマ」に「manual_blog」を選択します。</p>
+<div class="page-num">- 6 -</div>
+<!-- /.page-break --></div>
+<div id="000078"></div>
+<div class="page-break">
+<h2>ブログの設定を編集する</h2>
+<h3>投稿設定を編集する</h3>
+<div class="row m-b-sm">
+<div class="col-xs-10 col-xs-push-1"><img alt="" src="./upload/config_01.jpg" class="thumbnail" /></div>
+</div>
+<p class="m-b-lg">ブログのメインメニューの「設定＞投稿」を選択し、投稿設定をMovable Typeのデフォルトから変更します。</p>
+<h4>作成の規定値</h4>
+<p class="m-b">「目次に出す」というフィールドが追加されているので、チェックを入れてください。<br />「概要」「キーワード」「タグ」は使用しません。</p>
+<h4>WYSIWYGエディタの設定</h4>
+<p class="m-b-lg">このテーマには、専用のエディタ用CSSが含まれています。「コンテンツCSSファイル」に「<strong>editor.css</strong>」だけを入力してください。</p>
+<p class="m-t-lg text-right">▶︎次のページに続く</p>
+<div class="page-num">- 7 -</div>
+<!-- /.page-break --></div>
+<div id="000079"></div>
+<div class="page-break">
+<h3><span style="font-size: 12pt;">設定用テンプレートを編集する</span></h3>
+<div class="row m-b-sm">
+<div class="col-xs-10 col-xs-push-1"><img alt="" src="./upload/config_02.jpg" class="thumbnail" /></div>
+</div>
+<p>ブログのメインメニューの「デザイン＞テンプレート」を選択し、テンプレート一覧へ移動してください。</p>
+<p>「テンプレートモジュール」グループにある「<strong>モジュール::コンフィグ</strong>」テンプレートを探し、名称をクリックして編集画面を開いてください。</p>
+<p class="m-b-lg">コンフィグテンプレートで、マニュアルの各設定用の変数を変更していきます。次ページの表の内容に従って任意で書き換え、テンプレートを更新してください。</p>
+<p class="m-t-lg text-right">▶︎次のページに続く</p>
+<div class="page-num">- 8 -</div>
+<!-- /.page-break --></div>
+<div id="000080"></div>
+<div class="page-break">
+<table class="table table-bordered">
+<thead>
+<tr><th style="width: 20%;">変数名</th><th>解説</th></tr>
+</thead>
+<tbody>
+<tr><th>ma_web</th>
+<td>値に「1」が指定されていると、Webでの確認に対応します。目次の各項目にリンクが付与され、章別ページの画面左上にグローバルナビゲーションが表示されます。<br />印刷の際は「1」以外としてください。</td>
+</tr>
+<tr><th>ma_lead</th>
+<td>表紙のメインビジュアルの下の文章を指定します。SetVarBlockタグで変数化されているため、HTMLとMTMLを使用できます。</td>
+</tr>
+<tr><th>ma_font_base<br />ma_font_mono<br />ma_font_01<br />ma_font_02</th>
+<td>
+<p>マニュアルで使用するフォントを指定します。</p>
+<p>base: 本文の基本フォント<br />mono: pre要素を使用したときのソースコード用フォント<br />01: 大見出しなどの装飾フォント<br />02: ページ番号のフォント</p>
+<p>CSSのfont-familyと同様に記述してください。</p>
+</td>
+</tr>
+<tr><th>ma_color_pre</th>
+<td>コードに使用される文字色です。<br />初期値は緑となっています。</td>
+</tr>
+<tr><th>ma_color_important</th>
+<td>strong要素に使用される文字色です。<br />初期値は赤となっています。</td>
+</tr>
+<tr><th>ma_color_primary</th>
+<td>大見出しの下線、小見出しの■の色に使用されます。<br />初期値は青となっています。</td>
+</tr>
+<tr><th>ma_color_secondary</th>
+<td>em要素に使用される文字色です。<br />初期値は緑となっています。</td>
+</tr>
+<tr><th>ma_color_jumbotron</th>
+<td>表紙のタイトル枠に使用されるボーダー色です。<br />初期値は青となっています。</td>
+</tr>
+<tr><th>ma_color_page_header</th>
+<td>各章のタイトル背景、中見出し背景に使用されるアミカケ色です。<br />初期値は薄いグレーとなっています。</td>
+</tr>
+<tr><th>ma_alert_success_bg<br /> ma_alert_danger_bg</th>
+<td>bootstrap「alert-success」「alert-danger」を使用したときの背景色です。<br />bootstrapの初期値より少し明るくなっています。</td>
+</tr>
+</tbody>
+</table>
+<div class="page-num">- 9 -</div>
+<!-- /.page-break --></div>
+<div id="000082"></div>
+<div class="page-break">
+<h2>表紙の画像を用意する</h2>
+<div class="row m-b-sm">
+<div class="col-xs-10 col-xs-push-1"><img alt="" src="./upload/mainvisual.jpg" class="thumbnail" /></div>
+</div>
+<p>マニュアルの表紙に、メイン画像を掲載します。公開サイトのスクリーンショットが良いでしょう。</p>
+<p class="m-b-lg">縦横比2：1程度のJPG形式の画像を、<strong>「mainvisual.jpg」</strong>というファイル名で作成してください。</p>
+<div class="row m-b-sm">
+<div class="col-xs-10 col-xs-push-1"><img alt="" src="./upload/upload.jpg" class="thumbnail" /></div>
+</div>
+<p class="m-b-lg">作成した画像を<strong>「upload」ディレクトリ</strong>にアップロードすると、画像が表紙に反映されます。</p>
+<div class="m-b alert alert-success">
+<p>画像が不要な場合、ファイル名やパスを変更したい場合は、インデックステンプレート「インデックス::表紙」を修正してください。</p>
+</div>
+<div class="page-num">- 10 -</div>
+<!-- /.page-break --></div>
+<div id="000081"></div>
+<div class="page-break">
+<h2>カテゴリーを作成する</h2>
+<h3></h3>
+<div class="row m-b-sm">
+<div class="col-xs-10 col-xs-push-1"><img alt="" src="./upload/entry_01.jpg" class="thumbnail" /></div>
+</div>
+<p>このテーマでは、<strong>カテゴリーを一章、記事をA4サイズの1ページ</strong>として扱い、カテゴリーごとにHTMLファイルを出力します。<br />記事を書く前に、必ずカテゴリーを作成してください。</p>
+<p>カテゴリーの設定は、通常のMovable Typeの設定と同様に行います。</p>
+<ul class="m-b-lg">
+<li>カテゴリーリストで表示されている順番の通りに、目次が作成されます。</li>
+<li>階層構造には対応していません。</li>
+<li>日本語名が目次のタイトル、英語名が出力されるHTMLのファイル名となります。</li>
+</ul>
+<div class="page-num">- 11 -</div>
+<!-- /.page-break --></div>
+<div id="000083"></div>
+<div class="page-break">
+<h2>記事を作成する</h2>
+<h3>記事を作成する</h3>
+<div class="row m-b-sm">
+<div class="col-xs-10 col-xs-push-1"><img alt="" src="./upload/entry_02.jpg" class="thumbnail" /></div>
+</div>
+<p>通常のエントリーと同じように、記事を作成してください。リッチテキストエディタを含め、様々な書式で作成できます。</p>
+<ul>
+<li>プレビュー機能には対応していません。</li>
+<li><span style="font-size: 10.5pt;">画像は原寸サイズで掲載して構いません。自動的にページの横幅に合わせて縮小されます。</span></li>
+</ul>
+<p class="m-b-lg">作成後は、タイトル下に表示されるパーマリンクの「表示」ボタンを押すと、実際のマニュアルを確認できます。</p>
+<p class="m-t-lg text-right">▶︎次のページに続く</p>
+<div class="page-num">- 12 -</div>
+<!-- /.page-break --></div>
+<div id="000084"></div>
+<div class="page-break">
+<h3>「目次に出す」機能</h3>
+<div class="row m-b-sm">
+<div class="col-xs-10 col-xs-push-1"><img alt="" src="./upload/entry_03.jpg" class="thumbnail" /></div>
+</div>
+<p>「目次に出す」にチェックを入れると、記事のタイトルを節見出しとして、目次に掲載されます。基本的にチェックを入れてください。</p>
+<p class="m-b-lg">目次には公開日時順で掲載されます。順番を変更したい場合は、日時を調整してください。</p>
+<h3>節が2ページ以上にわたる場合</h3>
+<div class="row m-b-sm">
+<div class="col-xs-10 col-xs-push-1"><img alt="" src="./upload/entry_04.jpg" class="thumbnail" /></div>
+</div>
+<p>画像を含むマニュアルの場合、一節の文章がA4の1ページ以内に収まらないことがあります。<br />実際のマニュアル表示では、1ページをはみ出した分はカットされます。</p>
+<p class="m-b-lg">この場合は、一節を複数の記事に分けて作成し、2ページ目以降の記事の「目次に出す」のチェックを外してください。<br />2ページ目以降の記事のタイトルは、1ページ目のタイトルに通し番号を付け「記事を作成する02」などとしておくとわかりやすいです。</p>
+<div class="page-num">- 13 -</div>
+<!-- /.page-break --></div>
+<div id="000085"></div>
+<div class="page-break">
+<h2>マニュアルをPDFに変換する</h2>
+<h3>ブラウザでプリントする</h3>
+<p>マニュアルが完成したら、表紙と各章のHTMLを、紙もしくはPDF形式で出力します。<br />ブラウザの「プリント」機能で、一般のウェブサイトと同様に出力してください。</p>
+<p>このテーマは、<strong>MacOS El Capitan＋SafariでのPDF出力</strong>に最適化しています。<br />他の環境で正しく1ページに収まらない場合や、A4横・B5で印刷したい場合は、インデックステンプレート「bootstrap-theme.css」内の下記項目を調整してください。</p>
+<ul class="m-b-lg">
+<li>「.container」クラスのwidth</li>
+<li>「.page-break」クラスのheight</li>
+</ul>
+<h3>PDFを結合する</h3>
+<p>PDFの場合は、MacOSやAdobe Acrobatの機能で、すべてのHTMLを結合してください。</p>
+<p class="m-b-lg">ページ内の外部リンクは、そのままPDFにも反映されます。<br />目次から各ページへリンクしたい場合は、結合後に再設定してください。</p>
+<div class="m-b alert alert-success">
+<p>Adobe Acrobatでは、ファイル名を参照して「しおり」を自動作成するので、結合前にファイル名を各章のタイトルに変更しておくと便利です。</p>
+</div>
+<div class="page-num">- 14 -</div>
+<!-- /.page-break --></div>
+<div id="000086"></div>
+<div class="page-break">
+<h2>定型文を利用する</h2>
+<div class="row m-b-sm">
+<div class="col-xs-10 col-xs-push-1"><img alt="" src="./upload/formatted_text_01.jpg" class="thumbnail" /></div>
+</div>
+<p>このテーマ専用の「定型文」を登録しておくと、さらに見やすいマニュアルを作成できます。</p>
+<p>定型文は、リポジトリ内の「_formatted_text」ディレクトリにテキスト形式で含まれています。<br />ファイルの内容を、ウェブサイトもしくはブログのメインメニュー「記事＞定型文」からコピー・ペーストで登録してください。</p>
+<p class="m-b-lg">画像ファイルは基本的に「upload」ディレクトリから相対パスで表示する前提となっています。ディレクトリを変更したい場合は、定型文も修正してください。</p>
+<div class="page-num">- 15 -</div>
+<!-- /.page-break --></div>
+<!-- /.container --></div>
+</body>
+</html>
