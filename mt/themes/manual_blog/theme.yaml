@@ -8,7 +8,7 @@ elements:
     component: commercial
     data:
       maindexing:
-        default: 0
+        default: 1
         description: チェックを入れると、目次にセクションとして表示します。
         name: 目次に出す
         obj_type: entry
