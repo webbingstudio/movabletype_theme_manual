@@ -16,7 +16,7 @@ Copyright 2016 WebbingStudio
 
 CSS等は、基本的にMacOS＋Safari＋Acrobat前提となっています。
 
-デモサイト  
+使い方・デモサイト  
 http://cms-skill.com/manual_demo/
 
 
