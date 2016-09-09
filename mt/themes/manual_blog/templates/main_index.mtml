@@ -38,11 +38,7 @@
 <mt:SetVarBlock name="page_count"><mt:Var name="page_count" op="++" /></mt:SetVarBlock>
 
 <div class="archives">
-<mt:If name="ma_web" eq="1">
-<h2><a href="<mt:CategoryArchiveLink />"><mt:CategoryLabel encode_html="1" /></a><span class="pull-right"><mt:Var name="page_count" /></span></h2>
-<mt:Else>
 <h2><mt:CategoryLabel encode_html="1" /><span class="pull-right"><mt:Var name="page_count" /></span></h2>
-</mt:If>
 
 <mt:Entries limit="9999" sort_by="authored_on" sort_order="ascend">
 
@@ -52,11 +48,7 @@
 
 <mt:MaIndexing setvar="page_indexing" />
 <mt:If name="page_indexing" eq="1">
-<mt:If name="ma_web" eq="1">
-<h3><a href="<mt:EntryPermaLink />"><mt:EntryTitle encode_html="1" /></a><span class="pull-right"><mt:Var name="page_count" /></span></h3>
-<mt:Else>
 <h3><mt:EntryTitle encode_html="1" /><span class="pull-right"><mt:Var name="page_count" /></span></h3>
-</mt:If>
 </mt:If>
 
 </mt:Entries>
@@ -66,6 +58,20 @@
 
 <!-- /.page-break --></div>
 <!-- /.container --></div>
+
+
+<mt:If name="ma_web" eq="1">
+<div class="global-nav">
+<h2>Web用目次</h2>
+<ul>
+<li><a href="<mt:BlogURL />">表紙・目次</a></li>
+<mt:SubCategories top="1">
+<li><a href="<mt:CategoryArchiveLink />"><mt:CategoryLabel encode_html="1" /></a></li>
+</mt:SubCategories>
+</ul>
+</div>
+</mt:If>
+
 
 <mt:Include module="モジュール::フッタ" parent="1" />
 </mt:Unless>
